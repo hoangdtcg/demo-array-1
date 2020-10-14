@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+</head>
+<style>
+    #loading-bar{
+        height: 30px;
+        background-color: green;
+    }
+</style>
+<body>
+<div id="loading-bar" style="width: 0%"></div>
+<p id="loading"></p>
+<script>
+    function loading() {
+        for (let i = 1; i <= 99; i++) {
+            console.log(i);
+            if(i >= 99){
+                alert("Da loading xong");
+            }
+        }
+    }
+    // loading();
+    let count = 1;
+    function loading2() {
+        document.getElementById('loading').innerHTML = count+"%";
+        document.getElementById('loading-bar').style.width = count+'%';
+
+        if(count == 100){
+            alert("Da hoan thanh");
+            clearInterval(run);
+        }
+
+        count++;
+    }
+
+    let run = setInterval(loading2,50);
+</script>
+</body>
+</html>

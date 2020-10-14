@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caro Game</title>
+</head>
+<style>
+    td {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+    }
+</style>
+<body>
+
+<input type="number" id="row" placeholder="Row" value="10">
+<input type="number" id="col" placeholder="Col" value="10">
+<button onclick="createBoard()">Create</button>
+<table id="board" border="1px">
+</table>
+<script>
+    let turn = 1;
+
+    function createBoard() {
+        let row = +document.getElementById('row').value;
+        let col = +document.getElementById('col').value;
+        let str = '';
+        for (let i = 0; i < row; i++) {
+            str += '<tr>';
+            for (let j = 0; j < col; j++) {
+                str += '<td onclick="clickCell(this)"></td>';
+            }
+            str += '</tr>'
+        }
+
+        document.getElementById('board').innerHTML = str;
+    }
+
+    createBoard();
+
+    function clickCell(cell) {
+        if (cell.innerHTML != '') return;
+        // if(cell.innerHTML == ''){
+        if (turn == 1) {
+            cell.innerHTML = "X";
+            turn = 2;
+        } else {
+            cell.innerHTML = "O";
+            turn = 1;
+        }
+        // }
+    }
+</script>
+</body>
+</html>

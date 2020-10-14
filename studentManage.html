@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+</head>
+<body>
+<script>
+    let c0920i1 = ['Hoang', 'Chien', 'Thao', 'Hien', 'Khoi'];
+    c0920i1[7] = "Tu";
+    alert(c0920i1.length);
+    console.log(c0920i1[6])
+
+    let c0920k1 = ['Quynh', 'Dao', 'Thuy', 'Nam', 'Ca ngua'];
+    let c0820h1 = ['&nbsp;&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', 'Kha', 'Quang', 'Do             Mixi'];
+    let c0820k1 = ['1', '2', '3', 'Bon', 'Nam'];
+
+    let grades = [c0920i1, c0920k1, c0820h1,c0820k1]
+    // function showStudents() {
+    //     let str = '';
+    //
+    //     for (let i = 0; i < c0920i1.length; i++) {
+    //         str+=c0920i1[i]+',';
+    //     }
+    //     str+=('<br>');
+    //     for (let i = 0; i < c0920k1.length; i++) {
+    //         str+=c0920k1[i]+',';
+    //     }
+    //     str+=('<br>');
+    //     for (let i = 0; i < c0820h1.length; i++) {
+    //         str+=c0820h1[i]+',';
+    //     }
+    //
+    //     document.write(str);
+    // }
+
+    function showStudentSmart() {
+        let str = '';
+        for (let i = 0; i < grades.length; i++) {
+            str += '<br>';
+            for (let j = 0; j < grades[i].length; j++) {
+                str += grades[i][j]+',';
+            }
+        }
+        document.write(str);
+    }
+
+    showStudentSmart();
+</script>
+</body>
+</html>
